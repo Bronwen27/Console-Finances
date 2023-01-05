@@ -86,3 +86,32 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+// Get total months (86)
+let months = finances.length;
+console.log(months)
+
+// initial setup 
+let total = 0;
+let change = 0;
+let average;
+let analysis;
+let net = 0;
+let netArray = [];
+let netChangeSum = 0;
+
+// min
+// max 
+// let least = []
+// let most = []
+
+for (let i = 0; i < finances.length; i++){
+ for (let i2 = 0; i2 < finances[i].length; i2++) {
+    console.log(i2)
+    if(typeof finances[i][i2] !== 'string'){
+        total +=finances[i][i2]
+        console.log(total);
+    }
+ }
+
+}
