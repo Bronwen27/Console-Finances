@@ -102,16 +102,51 @@ let netChangeSum = 0;
 
 // min
 // max 
-// let least = []
-// let most = []
+let greatest = ['' , 999999 ];
+let least = ['' , 0];
 
 for (let i = 0; i < finances.length; i++){
  for (let i2 = 0; i2 < finances[i].length; i2++) {
-    console.log(i2)
+    //console.log(i2)
     if(typeof finances[i][i2] !== 'string'){
         total +=finances[i][i2]
-        console.log(total);
+        //console.log(total);
+        change = finances[i][i2] - net;
+        net = finances [i][i2];
+        netArray.push(change);
+
+        if (change >greatest[1]){
+            greatest = [finances[i][0], finances[i][1]]
+        }
+        if (change < least[1]){
+            least = [finances[i][0], finances[i][1]]
+        }
+        //console.log(`total: ${total}`)
+        //console.log(`netArray: ${netArray}`)
+        //console.log(`change: ${change}`)
+        //console.log(`net: ${net}`)
+
     }
  }
 
 }
+
+for (let i; i < netArray.length; i++){
+    netChangeSum = netChangeSum + netArray[i];
+}
+
+//console.log(netChangeSum);
+
+average = Math.round((netChangeSum / 86) * 100) /100;
+//console.log(average);
+
+analysis = `Financial Analysis` + '\n' +
+'-----------------' + '\n' +
+'Total Months: ' + months+ '\n' +
+'Total: $' + total + '\n' +
+'Average Change: ' + average + '\n' +
+'Greatest Increase in Profits: ' + greatest[0] + ': $' + greatest[1] + '\n' +
+'Greatest Decrease in Profits: ' + least[0] +  ': $' + least[1] + '\n' ;
+''
+
+console.log(analysis);
