@@ -89,7 +89,7 @@ var finances = [
 
 // Get total months (86)
 let months = finances.length;
-console.log(months)
+//console.log(months)
 
 // initial setup 
 let total = 0;
@@ -99,9 +99,6 @@ let analysis;
 let net = 0;
 let netArray = [];
 let netChangeSum = 0;
-
-// min
-// max 
 let greatest = ['' , 999999 ];
 let least = ['' , 0];
 
@@ -115,7 +112,7 @@ for (let i = 0; i < finances.length; i++){
         net = finances [i][i2];
         netArray.push(change);
 
-        if (change >greatest[1]){
+        if (change > greatest[1]){
             greatest = [finances[i][0], finances[i][1]]
         }
         if (change < least[1]){
@@ -131,7 +128,7 @@ for (let i = 0; i < finances.length; i++){
 
 }
 
-for (let i; i < netArray.length; i++){
+for (let i = 0; i < netArray.length; i++){
     netChangeSum = netChangeSum + netArray[i];
 }
 
@@ -140,13 +137,17 @@ for (let i; i < netArray.length; i++){
 average = Math.round((netChangeSum / 86) * 100) /100;
 //console.log(average);
 
-analysis = `Financial Analysis` + '\n' +
-'-----------------' + '\n' +
-'Total Months: ' + months+ '\n' +
-'Total: $' + total + '\n' +
-'Average Change: ' + average + '\n' +
-'Greatest Increase in Profits: ' + greatest[0] + ': $' + greatest[1] + '\n' +
-'Greatest Decrease in Profits: ' + least[0] +  ': $' + least[1] + '\n' ;
-''
+
+// Table Results
+
+analysis = `
+Financial Analysis
+-------------------------
+Total Months: ${months}
+Total: $${total}
+Average Change: $${average}
+Greatest Increase in Profits: ${greatest[0]}: $${greatest[1]}
+Greatest Decrease in Profits: ${least[0]}: $${least[1]}
+` 
 
 console.log(analysis);
