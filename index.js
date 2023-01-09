@@ -89,9 +89,6 @@ var finances = [
 
 // Get total months (86)
 let months = finances.length;
-//console.log(months)
-
-// initial setup 
 let total = 0;
 let change = 0;
 let average;
@@ -102,12 +99,13 @@ let netChangeSum = 0;
 let greatest = ['' , 999999 ];
 let least = ['' , 0];
 
+// Find totals for chart
+
 for (let i = 0; i < finances.length; i++){
  for (let i2 = 0; i2 < finances[i].length; i2++) {
-    //console.log(i2)
+    
     if(typeof finances[i][i2] !== 'string'){
         total +=finances[i][i2]
-        //console.log(total);
         change = finances[i][i2] - net;
         net = finances [i][i2];
         netArray.push(change);
@@ -118,27 +116,17 @@ for (let i = 0; i < finances.length; i++){
         if (change < least[1]){
             least = [finances[i][0], finances[i][1]]
         }
-        //console.log(`total: ${total}`)
-        //console.log(`netArray: ${netArray}`)
-        //console.log(`change: ${change}`)
-        //console.log(`net: ${net}`)
-
     }
  }
-
 }
 
 for (let i = 0; i < netArray.length; i++){
     netChangeSum = netChangeSum + netArray[i];
 }
 
-//console.log(netChangeSum);
-
 average = Math.round((netChangeSum / 86) * 100) /100;
-//console.log(average);
 
-
-// Table Results
+// Table Results Chart
 
 analysis = `
 Financial Analysis
