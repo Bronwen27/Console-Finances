@@ -58,7 +58,7 @@ Tasks completed:
 
 ## Usage
 
-
+! img of JavaScript coding in relation to Console chart display (..images/Screenshot.png)
 
 ## License 
 
