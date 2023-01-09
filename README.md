@@ -24,11 +24,11 @@ I have used JavaScript to analyse the data and calculate the total profits and c
 
 ## Deployed Link:
 
-
+https://bronwen27.github.io/Console-Finances/
 
 ### Repo Link:
 
-
+https://github.com/Bronwen27/Console-Finances
 
 ## Installation 
 
